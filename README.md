@@ -12,7 +12,7 @@ Clone the repo without git :
 
 **Setup Python**
 - install python 3.7.x or above, download [here](https://www.python.org/downloads/)
-- Follow the installation, and make sure python 3 successfully is installed in your machine :
+- Follow the installation steps, and make sure python 3 is successfully installed in your machine :
   
   `python3 --version`
 - go to the repository directory and create a virtual environment :
@@ -32,6 +32,7 @@ You can use your favorite IDE :
 
 In this workshop we will use MySQL 5.7 or above.
 There are two options to install the database server :
+
 Options 1 : Local server or VM :
 - Download the installation package :
   - Windows : [Download](https://dev.mysql.com/downloads/file/?id=502540)
