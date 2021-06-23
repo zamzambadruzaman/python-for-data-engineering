@@ -1,6 +1,6 @@
-## **idBIgData Workshop : Python for Data Engineering**
+# **idBIgData Workshop : Python for Data Engineering**
 
-**Clone or Download this Repository**
+## **Clone or Download this Repository**
 
 If you have `git` installed in your machine :
 
@@ -10,7 +10,7 @@ Clone the repo without git :
 - Download the repo : [Download zip](https://github.com/zamzambadruzaman/python-for-data-engineering/archive/refs/heads/master.zip)
 - Extract the zip
 
-**Setup Python**
+## **Setup Python**
 - install python 3.7.x or above, download [here](https://www.python.org/downloads/)
 - Follow the installation steps, and make sure python 3 is successfully installed in your machine :
   
@@ -19,7 +19,7 @@ Clone the repo without git :
   
   `python3 -m venv ./venv`
   
-**Install Python IDE**
+## **Install Python IDE**
 
 You can use your favorite IDE :
 - [PyCharm](https://www.jetbrains.com/edu-products/download/#section=pycharm-edu)
@@ -28,7 +28,7 @@ You can use your favorite IDE :
 - [Vim](https://www.vim.org/download.php)
 - etc
 
-**Setup MyQSL Database :**
+## **Setup MyQSL Database :**
 
 In this workshop we will use MySQL 5.7 or above.
 There are two options to install the database server :
@@ -48,13 +48,16 @@ Install MySQL Workbench (or your favorite MySQL Client) :
 - Download the installer : [Download](https://dev.mysql.com/downloads/workbench/)
 - Double click the installer and follow the instruction.
 
-**PySpark**
-- install PySpark => pip install pyspark
+## **PySpark**
+- Install PySpark => `pip install pyspark`
 
-**Great Expectations**
-- pip install great_expectations
+## **Great Expectations**
+- Install Great Expectations : `pip install great_expectations`
 
-**Airflow**
+## **Airflow**
+
+**Install Airflow on Linux / MacOS :**
+
 ```
 export AIRFLOW_HOME=~/airflow
 AIRFLOW_VERSION=2.1.0
@@ -84,3 +87,8 @@ start the scheduler
 open a new terminal or else run webserver with ``-D`` option to run it as a daemon
 
 `airflow scheduler`
+
+
+**Install Airflow on  Windows:**
+
+_to be updated_
