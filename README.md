@@ -14,10 +14,16 @@ Clone the repo without git :
 - install python 3.7.x or above, download [here](https://www.python.org/downloads/)
 - Follow the installation steps, and make sure python 3 is successfully installed in your machine :
   
-  `python3 --version`
+  `python --version`
 - go to the repository directory and create a virtual environment :
   
-  `python3 -m venv ./venv`
+  `python -m venv venv`
+
+- Activate the virtual environment
+  
+  `source venv/bin/activate` (Linux/MacOS)
+  
+  `venv\Scripts\activate` (Windows)
   
 ## **Install Python IDE**
 
@@ -49,10 +55,10 @@ Install MySQL Workbench (or your favorite MySQL Client) :
 - Double click the installer and follow the instruction.
 
 ## **PySpark**
-- Install PySpark => `pip install pyspark`
+- Install PySpark => `pip install pyspark` or `python -m pip install pyspark`
 
 ## **Great Expectations**
-- Install Great Expectations : `pip install great_expectations`
+- Install Great Expectations : `pip install great_expectations` or `python -m pip install great_expectations`
 
 ## **Airflow**
 
@@ -66,11 +72,22 @@ CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${A
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 ```
 
-initialize the database
+**Install Airflow on  Windows:**
+
+```
+export AIRFLOW_HOME=C:\airflow
+AIRFLOW_VERSION=2.1.0
+PYTHON_VERSION=3.8 (Change it with your python version)
+CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+python -m pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+```
+
+Initialize the database
 
 `airflow db init`
 
 create airflow user
+
 ``` 
 airflow users create \
     --username admin \
@@ -89,6 +106,4 @@ open a new terminal or else run webserver with ``-D`` option to run it as a daem
 `airflow scheduler`
 
 
-**Install Airflow on  Windows:**
 
-_to be updated_
