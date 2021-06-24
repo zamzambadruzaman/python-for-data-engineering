@@ -74,6 +74,9 @@ pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}
 
 **Install Airflow on  Windows:**
 
+The recommended way to install Airflow on Windows machine is by enabling Windows subsystem for Linux (WSL), you can follow this tutorial : [Install Airflow on Windows using WSL](https://towardsdatascience.com/run-apache-airflow-on-windows-10-without-docker-3c5754bb98b4)
+
+If you cannot enable WSL in your machine for some reasons, you can try to install it directly  as follows :
 ```
 export AIRFLOW_HOME=C:\airflow
 AIRFLOW_VERSION=2.1.0
@@ -82,11 +85,23 @@ CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${A
 python -m pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 ```
 
-Initialize the database
+**Initialize the Airflow database**
+
+Disable Airflow example dags loading (Optional):
+- Go to Airflow home directory : `cd $AIRFLOW_HOME` (Linux/MacOS) or `dir %AIRFLOW_HOME%` (Windows)
+- Edit `airflow.cfg` , and make this change :
+  
+  `load_examples = True`
+  
+  Change to 
+  
+  `load_examples = False`
+
+Initiate the database :
 
 `airflow db init`
 
-create airflow user
+**Create Airflow user**
 
 ``` 
 airflow users create \
@@ -96,6 +111,9 @@ airflow users create \
     --role Admin \
     --email admin@idbigdata.com
 ```
+
+**Start Airflow services**
+
 start the web server, default port is 8080
 
 `airflow webserver --port 8080`
