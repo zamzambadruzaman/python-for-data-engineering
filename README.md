@@ -124,4 +124,5 @@ open a new terminal or else run webserver with ``-D`` option to run it as a daem
 `airflow scheduler`
 
 
+Now, you can open browser and access : `http://localhost:8080`
 
