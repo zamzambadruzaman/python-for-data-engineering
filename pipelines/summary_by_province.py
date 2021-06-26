@@ -27,4 +27,11 @@ grouped_case_df = case_df.filter(to_date(col('Date'), 'dd/mm/yyyy') >= datetime.
 
 grouped_case_df.show()
 
+summary_df = grouped_case_df.join(zone_df,
+                                  (grouped_case_df['Total_Case'] >= zone_df['Min_Total_case']) &
+                                  (grouped_case_df['Total_Case'] <= zone_df['Max_Total_Case']),
+                                  how='inner').select('Province', 'Total_Case', 'Zone')
+
+summary_df.show()
+
 # Load
