@@ -35,4 +35,24 @@ summary_df = grouped_case_df.join(zone_df,
 summary_df.show()
 
 # Load
+partition_date = datetime.today().strftime("%Y%m%d")
 
+summary_df.repartition(1).write.csv(os.path.join(project_dir, f"output/summary_by_province_{partition_date}"),
+                                    mode='overwrite',
+                                    header=True)
+
+db_conn: str = "jdbc:mysql://localhost:3306/mydb?useSSL=false"
+table_name: str = "summary_by_province"
+properties: dict = {
+    "user": "root",
+    "password": "password123",
+    "driver": "com.mysql.cj.jdbc.Driver"
+}
+
+try:
+    summary_df.repartition(1).write.mode("overwrite").jdbc(db_conn, table=table_name, mode='overwrite',
+                                                           properties=properties)
+    print('Data has been loaded to MySQL!')
+except Exception as exp:
+    print(f'ERROR : Failed to load data to MySQL : {exp}')
+    raise
