@@ -44,8 +44,8 @@ summary_df.repartition(1).write.csv(os.path.join(project_dir, f"output/summary_b
 db_conn: str = "jdbc:mysql://localhost:3306/mydb?useSSL=false"
 table_name: str = "summary_by_province"
 properties: dict = {
-    "user": "root",
-    "password": "password123",
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
     "driver": "com.mysql.cj.jdbc.Driver"
 }
 
